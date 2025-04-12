@@ -1,0 +1,55 @@
+\documentclass[
+	12pt,twoside,a4paper
+]{report}
+
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage{etoc}
+\usepackage{xcolor, soul}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{circuitikz}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[style=apa, backend=biber]{biblatex}
+
+\addbibresource{refs.bib}
+\DeclareLanguageMapping{english}{english-apa}
+
+\sethlcolor{yellow}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyhead[l]{Project 1}
+	\fancyhead[r]{April 26, 2024}
+	\fancyfoot[le, ro]{Page \thepage}
+	\fancyfoot[re, lo]{ESD Capsule 2024}
+	\setlength{\headheight}{15pt}
+	\renewcommand{\headrulewidth}{0.2pt}
+	\renewcommand{\footrulewidth}{0.2pt}
+}	
+
+\thispagestyle{plain}
+
+\renewcommand{\etocaftertitlehook}{\thispagestyle{plain}}
+\renewcommand{\etocaftertochook}{\thispagestyle{plain}}
+
+\begin{document}
+	\include{title}
+	\tableofcontents
+
+	\include{chapters/01-introduction.tex}
+	\include{chapters/02-capacitor-design.tex}
+	\include{chapters/03-measuring-capacitance.tex}
+	\include{chapters/04-using-capacitor.tex}
+	\include{chapters/05-conclusion.tex}
+
+	\newpage
+	\thispagestyle{plain}
+	\printbibliography{}
+\end{document}
